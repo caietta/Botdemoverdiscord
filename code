@@ -1,0 +1,24 @@
+import discord
+import asyncio 
+
+intents = discord.Intents.all()
+
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.command()
+async def m(ctx, membro: discord.Member, vezes: int = 5):
+    vezes = min(vezes, 20)
+    canal_x_id = 1142250185972527194 
+    canal_y_id = 1127739190625447999 
+    canal_x = bot.get_channel(canal_x_id) 
+    canal_y = bot.get_channel(canal_y_id) 
+    for i in range(vezes):
+        await membro.move_to(canal_x)
+        await asyncio.sleep(00.1)
+        await membro.move_to(canal_y)
+        await asyncio.sleep(00.1)
+
+
+bot.run('yourtoken')
