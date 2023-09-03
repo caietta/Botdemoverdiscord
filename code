@@ -10,8 +10,8 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.command()
 async def m(ctx, membro: discord.Member, vezes: int = 5):
     vezes = min(vezes, 20)
-    canal_x_id = 1142250185972527194 
-    canal_y_id = 1127739190625447999 
+    canal_x_id = yourchannelid
+    canal_y_id = yourchannelid
     canal_x = bot.get_channel(canal_x_id) 
     canal_y = bot.get_channel(canal_y_id) 
     for i in range(vezes):
